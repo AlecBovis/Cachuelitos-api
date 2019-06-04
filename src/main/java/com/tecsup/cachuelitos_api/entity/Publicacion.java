@@ -36,10 +36,16 @@ public class Publicacion implements Serializable {
     private Date fechaPublicacion;
 
     @ManyToOne
+    @JoinColumn(name = "usuarios_idusuarios")
     private Usuario usuario;
 
     @ManyToOne
+    @JoinColumn(name = "distritos_iddistritos")
     private Distrito distrito;
+
+    @ManyToOne
+    @JoinColumn(name = "oficios_idoficios")
+    private Oficio oficio;
 
     public Integer getIdPublicacion() {
         return idPublicacion;
@@ -121,6 +127,14 @@ public class Publicacion implements Serializable {
         this.distrito = distrito;
     }
 
+    public Oficio getOficio() {
+        return oficio;
+    }
+
+    public void setOficio(Oficio oficio) {
+        this.oficio = oficio;
+    }
+
     @Override
     public String toString() {
         return "Publicacion{" +
@@ -134,6 +148,7 @@ public class Publicacion implements Serializable {
                 ", fechaPublicacion=" + fechaPublicacion +
                 ", usuario=" + usuario +
                 ", distrito=" + distrito +
+                ", oficio=" + oficio +
                 '}';
     }
 }

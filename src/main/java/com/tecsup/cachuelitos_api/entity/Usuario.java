@@ -13,7 +13,7 @@ public class Usuario implements Serializable {
     private Integer idUsuario;
 
     @Column(name = "id_firebase")
-    private Integer idFirebase;
+    private String idFirebase;
 
     @Column(name = "usu_nombre")
     private String nombreUsuario;
@@ -40,6 +40,7 @@ public class Usuario implements Serializable {
     private String horariosUsuario;
 
     @ManyToOne
+    @JoinColumn(name = "distritos_iddistritos")
     private Distrito distrito;
 
     public Integer getIdUsuario() {
@@ -50,11 +51,11 @@ public class Usuario implements Serializable {
         this.idUsuario = idUsuario;
     }
 
-    public Integer getIdFirebase() {
+    public String getIdFirebase() {
         return idFirebase;
     }
 
-    public void setIdFirebase(Integer idFirebase) {
+    public void setIdFirebase(String idFirebase) {
         this.idFirebase = idFirebase;
     }
 
@@ -134,7 +135,7 @@ public class Usuario implements Serializable {
     public String toString() {
         return "Usuario{" +
                 "idUsuario=" + idUsuario +
-                ", idFirebase=" + idFirebase +
+                ", idFirebase='" + idFirebase + '\'' +
                 ", nombreUsuario='" + nombreUsuario + '\'' +
                 ", telefonoUsuario='" + telefonoUsuario + '\'' +
                 ", emailUsuario='" + emailUsuario + '\'' +

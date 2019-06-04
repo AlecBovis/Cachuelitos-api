@@ -19,9 +19,11 @@ public class Oferta implements Serializable {
     private String detalleOferta;
 
     @ManyToOne
+    @JoinColumn(name = "publicacion_idpublicaciones")
     private Publicacion publicacion;
 
     @ManyToOne
+    @JoinColumn(name = "usuario_idusuarios")
     private Usuario usuario;
 
     public Integer getIdOferta() {
