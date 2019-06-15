@@ -36,14 +36,22 @@ public class UsuarioController {
         return usuario;
     }
 
-    /*
     @PutMapping(value = {"/usuario/{id}"})
     Usuario update(@RequestBody Usuario usuario, @PathVariable(value = "id") Integer id) {
         Usuario currentUsuario = this.iUsuarioService.findById(id);
+        currentUsuario.setNombreUsuario(usuario.getNombreUsuario());
+        currentUsuario.setDescripcionUsuario(usuario.getDescripcionUsuario());
+        currentUsuario.setDisponibilidadUsuario(usuario.getDisponibilidadUsuario());
+        currentUsuario.setEstadoUsuario(usuario.getEstadoUsuario());
+        currentUsuario.setHorariosUsuario(usuario.getHorariosUsuario());
+        currentUsuario.setTelefonoUsuario(usuario.getTelefonoUsuario());
+        currentUsuario.setDistrito(usuario.getDistrito());
+        currentUsuario.setOficio1(usuario.getOficio1());
+        currentUsuario.setOficio2(usuario.getOficio2());
+        currentUsuario.setOficio3(usuario.getOficio3());
         this.iUsuarioService.save(currentUsuario);
         return currentUsuario;
     }
-    */
 
     @DeleteMapping(value = {"/usuario/{id}"})
     @ResponseStatus(HttpStatus.OK)

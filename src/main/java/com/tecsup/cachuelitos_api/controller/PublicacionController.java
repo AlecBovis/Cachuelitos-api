@@ -36,14 +36,21 @@ public class PublicacionController {
         return publicacion;
     }
 
-    /*
     @PutMapping(value = {"/publicacion/{id}"})
     Publicacion update(@RequestBody Publicacion publicacion, @PathVariable(value = "id") Integer id) {
         Publicacion currentPublicacion = this.iPublicacionService.findById(id);
+        currentPublicacion.setCalificacionCliente(publicacion.getCalificacionCliente());
+        currentPublicacion.setCalificacionEmpleado(publicacion.getCalificacionEmpleado());
+        currentPublicacion.setDescripcionPublicacion(publicacion.getDescripcionPublicacion());
+        currentPublicacion.setEstadoPublicacion(publicacion.getEstadoPublicacion());
+        currentPublicacion.setHabilidadesPublicacion(publicacion.getHabilidadesPublicacion());
+        currentPublicacion.setTelefonoPublicacion(publicacion.getTelefonoPublicacion());
+        currentPublicacion.setTituloPublicacion(publicacion.getTituloPublicacion());
+        currentPublicacion.setDistrito(publicacion.getDistrito());
+        currentPublicacion.setOficio(publicacion.getOficio());
         this.iPublicacionService.save(currentPublicacion);
         return currentPublicacion;
     }
-    */
 
     @DeleteMapping(value = {"/publicacion/{id}"})
     @ResponseStatus(HttpStatus.OK)

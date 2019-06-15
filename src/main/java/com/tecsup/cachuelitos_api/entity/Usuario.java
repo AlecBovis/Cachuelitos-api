@@ -30,18 +30,31 @@ public class Usuario implements Serializable {
     @Column(name = "usu_disponibilidad")
     private Boolean disponibilidadUsuario;
 
-    @Column(name = "usu_calificacion_emp")
-    private Integer calificacionEmpleado;
-
-    @Column(name = "usu_calificacion_clien")
-    private Integer calificacionCliente;
+    @Column(name = "usu_descripcion")
+    private String descripcionUsuario;
 
     @Column(name = "usu_horarios")
     private String horariosUsuario;
 
+    @Column(name = "usu_foto")
+    private String fotoUsuario;
+
     @ManyToOne
     @JoinColumn(name = "distritos_iddistritos")
     private Distrito distrito;
+
+    @ManyToOne
+    @JoinColumn(name = "oficios_idoficios1")
+    private Oficio oficio1;
+
+    @ManyToOne
+    @JoinColumn(name = "oficios_idoficios2")
+    private Oficio oficio2;
+
+    @ManyToOne
+    @JoinColumn(name = "oficios_idoficios3")
+    private Oficio oficio3;
+
 
     public Integer getIdUsuario() {
         return idUsuario;
@@ -99,20 +112,12 @@ public class Usuario implements Serializable {
         this.disponibilidadUsuario = disponibilidadUsuario;
     }
 
-    public Integer getCalificacionEmpleado() {
-        return calificacionEmpleado;
+    public String getDescripcionUsuario() {
+        return descripcionUsuario;
     }
 
-    public void setCalificacionEmpleado(Integer calificacionEmpleado) {
-        this.calificacionEmpleado = calificacionEmpleado;
-    }
-
-    public Integer getCalificacionCliente() {
-        return calificacionCliente;
-    }
-
-    public void setCalificacionCliente(Integer calificacionCliente) {
-        this.calificacionCliente = calificacionCliente;
+    public void setDescripcionUsuario(String descripcionUsuario) {
+        this.descripcionUsuario = descripcionUsuario;
     }
 
     public String getHorariosUsuario() {
@@ -123,12 +128,44 @@ public class Usuario implements Serializable {
         this.horariosUsuario = horariosUsuario;
     }
 
+    public String getFotoUsuario() {
+        return fotoUsuario;
+    }
+
+    public void setFotoUsuario(String fotoUsuario) {
+        this.fotoUsuario = fotoUsuario;
+    }
+
     public Distrito getDistrito() {
         return distrito;
     }
 
     public void setDistrito(Distrito distrito) {
         this.distrito = distrito;
+    }
+
+    public Oficio getOficio1() {
+        return oficio1;
+    }
+
+    public void setOficio1(Oficio oficio1) {
+        this.oficio1 = oficio1;
+    }
+
+    public Oficio getOficio2() {
+        return oficio2;
+    }
+
+    public void setOficio2(Oficio oficio2) {
+        this.oficio2 = oficio2;
+    }
+
+    public Oficio getOficio3() {
+        return oficio3;
+    }
+
+    public void setOficio3(Oficio oficio3) {
+        this.oficio3 = oficio3;
     }
 
     @Override
@@ -141,10 +178,13 @@ public class Usuario implements Serializable {
                 ", emailUsuario='" + emailUsuario + '\'' +
                 ", estadoUsuario=" + estadoUsuario +
                 ", disponibilidadUsuario=" + disponibilidadUsuario +
-                ", calificacionEmpleado=" + calificacionEmpleado +
-                ", calificacionCliente=" + calificacionCliente +
+                ", descripcionUsuario='" + descripcionUsuario + '\'' +
                 ", horariosUsuario='" + horariosUsuario + '\'' +
+                ", fotoUsuario='" + fotoUsuario + '\'' +
                 ", distrito=" + distrito +
+                ", oficio1=" + oficio1 +
+                ", oficio2=" + oficio2 +
+                ", oficio3=" + oficio3 +
                 '}';
     }
 }

@@ -39,6 +39,8 @@ public class OfertaController {
     @PutMapping(value = {"/oferta/{id}"})
     Oferta update(@RequestBody Oferta oferta, @PathVariable(value = "id") Integer id) {
         Oferta currentOferta = this.iOfertaService.findById(id);
+        currentOferta.setCotizarOferta(oferta.getCotizarOferta());
+        currentOferta.setDetalleOferta(oferta.getDetalleOferta());
         this.iOfertaService.save(currentOferta);
         return currentOferta;
     }

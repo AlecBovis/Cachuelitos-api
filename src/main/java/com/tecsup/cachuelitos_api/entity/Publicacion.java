@@ -35,6 +35,12 @@ public class Publicacion implements Serializable {
     @Column(name = "pub_fecha")
     private Date fechaPublicacion;
 
+    @Column(name = "pub_calificacion_emp")
+    private Integer calificacionEmpleado;
+
+    @Column(name = "pub_calificacion_clien")
+    private Integer calificacionCliente;
+
     @ManyToOne
     @JoinColumn(name = "usuarios_idusuarios")
     private Usuario usuario;
@@ -111,6 +117,22 @@ public class Publicacion implements Serializable {
         this.fechaPublicacion = fechaPublicacion;
     }
 
+    public Integer getCalificacionEmpleado() {
+        return calificacionEmpleado;
+    }
+
+    public void setCalificacionEmpleado(Integer calificacionEmpleado) {
+        this.calificacionEmpleado = calificacionEmpleado;
+    }
+
+    public Integer getCalificacionCliente() {
+        return calificacionCliente;
+    }
+
+    public void setCalificacionCliente(Integer calificacionCliente) {
+        this.calificacionCliente = calificacionCliente;
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -146,6 +168,8 @@ public class Publicacion implements Serializable {
                 ", habilidadesPublicacion='" + habilidadesPublicacion + '\'' +
                 ", estadoPublicacion=" + estadoPublicacion +
                 ", fechaPublicacion=" + fechaPublicacion +
+                ", calificacionEmpleado=" + calificacionEmpleado +
+                ", calificacionCliente=" + calificacionCliente +
                 ", usuario=" + usuario +
                 ", distrito=" + distrito +
                 ", oficio=" + oficio +
