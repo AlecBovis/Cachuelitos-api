@@ -31,6 +31,9 @@ public class Publicacion implements Serializable {
     @Column(name = "pub_estado")
     private Boolean estadoPublicacion;
 
+    @Column(name = "pub_disponibilidad")
+    private  Boolean disponibilidadPublicacion;
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "pub_fecha")
     private Date fechaPublicacion;
@@ -109,6 +112,14 @@ public class Publicacion implements Serializable {
         this.estadoPublicacion = estadoPublicacion;
     }
 
+    public Boolean getDisponibilidadPublicacion() {
+        return disponibilidadPublicacion;
+    }
+
+    public void setDisponibilidadPublicacion(Boolean disponibilidadPublicacion) {
+        this.disponibilidadPublicacion = disponibilidadPublicacion;
+    }
+
     public Date getFechaPublicacion() {
         return fechaPublicacion;
     }
@@ -167,6 +178,7 @@ public class Publicacion implements Serializable {
                 ", telefonoPublicacion='" + telefonoPublicacion + '\'' +
                 ", habilidadesPublicacion='" + habilidadesPublicacion + '\'' +
                 ", estadoPublicacion=" + estadoPublicacion +
+                ", disponibilidadPublicacion=" + disponibilidadPublicacion +
                 ", fechaPublicacion=" + fechaPublicacion +
                 ", calificacionEmpleado=" + calificacionEmpleado +
                 ", calificacionCliente=" + calificacionCliente +

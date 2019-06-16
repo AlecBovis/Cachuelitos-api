@@ -81,9 +81,9 @@ INSERT INTO usuarios (idusuarios,id_firebase,usu_nombre,usu_telefono,usu_email,u
 INSERT INTO usuarios (idusuarios,id_firebase,usu_nombre,usu_telefono,usu_email,usu_estado,usu_disponibilidad,usu_descripcion,usu_horarios,usu_foto,distritos_iddistritos,oficios_idoficios1,oficios_idoficios2,oficios_idoficios3) VALUES (3,'xxx','ana','1234567','abc@gmail.com',1,1,'xxx','4pm','xxx',8,8,5,4);
 
 
-INSERT INTO publicaciones (idpublicaciones,pub_titulo,pub_descripcion,pub_email,pub_telefono,pub_habilidades,pub_estado,pub_fecha,pub_calificacion_emp,pub_calificacion_clien,usuarios_idusuarios,distritos_iddistritos,oficios_idoficios) VALUES (1,'titulo','descripcion','abc@gmail','1234567','habilidades',1,'2010-01-12 10:50:43',5,4,1,6,1);
+INSERT INTO publicaciones (idpublicaciones,pub_titulo,pub_descripcion,pub_email,pub_telefono,pub_habilidades,pub_estado,pub_disponibilidad,pub_fecha,pub_calificacion_emp,pub_calificacion_clien,usuarios_idusuarios,distritos_iddistritos,oficios_idoficios) VALUES (1,'titulo','descripcion','abc@gmail','1234567','habilidades',1,1,'2010-01-12 10:50:43',5,4,1,6,1);
 
-INSERT INTO publicaciones (idpublicaciones,pub_titulo,pub_descripcion,pub_email,pub_telefono,pub_habilidades,pub_estado,pub_fecha,pub_calificacion_emp,pub_calificacion_clien,usuarios_idusuarios,distritos_iddistritos,oficios_idoficios) VALUES (2,'titulo','descripcion','abc@gmail','1234567','habilidades',1,'2010-01-12 10:50:43',5,4,2,3,2);
+INSERT INTO publicaciones (idpublicaciones,pub_titulo,pub_descripcion,pub_email,pub_telefono,pub_habilidades,pub_estado,pub_disponibilidad,pub_fecha,pub_calificacion_emp,pub_calificacion_clien,usuarios_idusuarios,distritos_iddistritos,oficios_idoficios) VALUES (2,'titulo','descripcion','abc@gmail','1234567','habilidades',1,1,'2010-01-12 10:50:43',5,4,2,3,2);
 
 INSERT INTO ofertas(idofertas, cotizar,detalle,estado,publicacion_idpublicaciones,usuario_idusuarios) VALUES (1, 150.00,'Alta experiencia',1,1,1);
 
