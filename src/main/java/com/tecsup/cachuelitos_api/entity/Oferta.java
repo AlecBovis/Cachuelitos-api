@@ -18,6 +18,9 @@ public class Oferta implements Serializable {
     @Column(name = "detalle")
     private String detalleOferta;
 
+    @Column(name = "estado")
+    private Boolean estadoOferta;
+
     @ManyToOne
     @JoinColumn(name = "publicacion_idpublicaciones")
     private Publicacion publicacion;
@@ -50,6 +53,14 @@ public class Oferta implements Serializable {
         this.detalleOferta = detalleOferta;
     }
 
+    public Boolean getEstadoOferta() {
+        return estadoOferta;
+    }
+
+    public void setEstadoOferta(Boolean estadoOferta) {
+        this.estadoOferta = estadoOferta;
+    }
+
     public Publicacion getPublicacion() {
         return publicacion;
     }
@@ -72,6 +83,7 @@ public class Oferta implements Serializable {
                 "idOferta=" + idOferta +
                 ", cotizarOferta=" + cotizarOferta +
                 ", detalleOferta='" + detalleOferta + '\'' +
+                ", estadoOferta=" + estadoOferta +
                 ", publicacion=" + publicacion +
                 ", usuario=" + usuario +
                 '}';
