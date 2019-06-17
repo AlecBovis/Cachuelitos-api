@@ -48,6 +48,7 @@ public class PublicacionController {
         currentPublicacion.setTituloPublicacion(publicacion.getTituloPublicacion());
         currentPublicacion.setDistrito(publicacion.getDistrito());
         currentPublicacion.setOficio(publicacion.getOficio());
+        currentPublicacion.setDisponibilidadPublicacion(publicacion.getDisponibilidadPublicacion());
         this.iPublicacionService.save(currentPublicacion);
         return currentPublicacion;
     }

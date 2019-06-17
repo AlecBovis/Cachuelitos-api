@@ -41,6 +41,7 @@ public class OfertaController {
         Oferta currentOferta = this.iOfertaService.findById(id);
         currentOferta.setCotizarOferta(oferta.getCotizarOferta());
         currentOferta.setDetalleOferta(oferta.getDetalleOferta());
+        currentOferta.setEstadoOferta(oferta.getEstadoOferta());
         this.iOfertaService.save(currentOferta);
         return currentOferta;
     }
